@@ -1,0 +1,25 @@
+import random
+print("Welcome to Rock Paper Scissors Game\n")
+print("R-Rock  \n P-Paper \n S-Scissors\n")
+times=int(input("Enter how many times to play a game"))
+userScore=0
+comScore=0
+for i in range(times):
+    li=['R','P','S']
+    user=input("Enter your choice")
+    com=str(random.choice(li))
+    print("Computer choice is ",com)
+    if (user=='R' and com=='S') or (user=='P' and com=='R') or (user=='S' and com=='P'):
+        userScore+=1
+    elif (user==com):
+        continue
+    else :
+       comScore+=1
+print("User score is",userScore)
+print("Computer score is",comScore)
+if userScore > comScore :
+    print(f"User Won with {userScore-comScore} points")
+elif  userScore==comScore :
+   print("The Game is Tie")
+else :
+    print(f"Computer won with {comScore-userScore} points")
